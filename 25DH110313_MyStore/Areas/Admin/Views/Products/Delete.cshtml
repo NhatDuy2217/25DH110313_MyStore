@@ -1,0 +1,43 @@
+﻿@model _25DH110313_MyStore.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<head>
+    <style>
+        img {
+            height: 200px;
+            width: 150px;
+        }
+    </style>
+</head>
+<h2 class="alert alert-success">XÓA SẢN PHẨM</h2>
+
+<h4 class="alert alert-danger">Bạn chắc chắn muốn xóa sản phẩm này?</h4>
+<div class="container-fluid">
+    <div class="div-horizontal">
+        <div class="col-md-4">
+            <img src="@Html.DisplayFor(model => model.ProductImage)" />
+        </div>
+        <div class="cod-md-8">
+            <dl class="dl-horizontal">
+                <dt>Tên sản phẩm</dt>
+                <dd>@Html.DisplayFor(model => model.ProductName)</dd>
+
+                <dt>Đơn giá</dt>
+                <dd>@Html.DisplayFor(model => model.ProductPrice)</dd>
+
+                <dt>Mô tả</dt>
+                <dd>@Html.DisplayFor(model => model.ProductDescription)</dd>
+
+                <dt>Danh mục</dt>
+                <dd>@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div style="padding:10px">
+    <input type="submit" value="Xóa" class="btn btn-danger" /> |
+    @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</div>
